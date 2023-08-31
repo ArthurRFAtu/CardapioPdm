@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Categoria {
+class Categoria{
   final String id;
   final String titulo;
   final Color color;
@@ -10,5 +10,4 @@ class Categoria {
     required this.titulo,
     this.color = Colors.orange,
   });
-
 }

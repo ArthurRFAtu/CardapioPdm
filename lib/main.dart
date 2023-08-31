@@ -1,37 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:navegacao/telas/tela_categoria.dart';
+import 'package:navegacao/telas/tela_produtos.dart';
+import 'package:navegacao/utils/rotas.dart';
 
-import 'Telas/tela_categoria.dart';
+void main() {
+  runApp(MeuCardapio());
+}
 
-void main() => runApp(AppCardapio());
-
-class AppCardapio extends StatelessWidget {
+class MeuCardapio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Cardápio',
+      title: "Meu Cardápio",
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.blue,
       ),
-      home: TelaCategorias(),
-    );
-  }
-}
- 
-class PaginaInicial extends StatefulWidget {
-  @override
-  PaginaInicialState createState() => PaginaInicialState();
-}
- 
-class PaginaInicialState extends State<PaginaInicial> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Cardápio'),
-      ),
-      body: Center(
-        child: Text('Corpo do meu APP'),
-      ),
+      //home: TelaCategorias(),
+      routes:{
+       Rotas.HOME : (ctx) => TelaCategorias(),
+       Rotas.PRODUTOS : (ctx) => TelaProdutos(),
+     }
     );
   }
 }
